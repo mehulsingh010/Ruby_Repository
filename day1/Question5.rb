@@ -1,7 +1,7 @@
 #5. Write a program to find IP address class.
 
 
-def Determine_IP_Class(ip_address)
+def determine_ip_class(ip_address)
     octets = ip_address.split('.').map(&:to_i)
 
     first_octet = octets[0]
@@ -24,4 +24,4 @@ end
 
 puts "Enter an IP Address :"
 ip_address = gets.chomp
-Determine_IP_Class(ip_address)
+determine_ip_class(ip_address)
