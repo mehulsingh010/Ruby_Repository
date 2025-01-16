@@ -12,7 +12,7 @@ if grade is between otherwise return college
 puts "enetr the grade "
 grade = gets.to_i
 
-def DetermineSchoolLevel(grade)
+def determine_school_level(grade)
   if grade >=1 && grade <= 5
       return "Elementary"
   elsif grade >= 6 && grade <= 8
@@ -24,7 +24,7 @@ def DetermineSchoolLevel(grade)
   end
 end
 
-puts "School Level Is : " , DetermineSchoolLevel(grade)
+puts "School Level Is : " , determine_school_level(grade)
 
 
 
