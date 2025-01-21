@@ -2,26 +2,26 @@
 
 
 def validate_phone(phoneNumber)
-    if phoneNumber.match(/^\d{10}$/)
-      puts "Valid PhoneNumber #{phoneNumber}"
-    else 
-      puts "Invalid phone number"
-    end
+  if phoneNumber.match(/^\d{10}$/)
+    puts "Valid PhoneNumber #{phoneNumber}"
+  else 
+    puts "Invalid phone number"
+  end
 end
 
 
 def validate_email(email)
   if email.match(/^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-      puts "valid email #{email}"
+    puts "valid email #{email}"
   else 
-      puts "Invalid email"
+    puts "Invalid email"
   end
 end
 
 
 def validate_name(name)
-  if name.match(/^[a-zA-Z0-9\s]{2,50}$/)
-    puts "VAlid Name :#{name}"
+  if name.match(/^[a-zA-Z\s]{2,50}$/)
+    puts "Valid Name :#{name}"
   
   else 
     puts "Invalid Name : #{name}"
@@ -41,7 +41,7 @@ def validate_amount(amount)
     puts "Valid Amount : #{amount}"
 
   else 
-      puts "Invalid Amount : #{amount}"
+    puts "Invalid Amount : #{amount}"
   end
 end
 
