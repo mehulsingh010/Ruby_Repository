@@ -4,7 +4,7 @@
 puts "Enter A Number To check whether it is a prime number or not"
 num = gets.to_i
 
-def checking_prime_number(num)
+def is_prime?(num)
   
   if  num < 2
     puts "Number #{num} Is not a Prime Number"
@@ -21,4 +21,4 @@ def checking_prime_number(num)
 end
 
 
-checking_prime_number(num)
+is_prime?(num)
