@@ -2,21 +2,25 @@
 
 
 def determine_ip_class(ip_address)
-    octets = ip_address.split('.').map(&:to_i)
-
-    first_octet = octets[0]
-
-    case first_octet
+  octets = ip_address.split('.').map(&:to_i)
+  first_octet = octets[0]
+  
+  case first_octet
     when 1..126
-        puts "The IP address belongs to Class A"
+      # Range 1-126
+      puts "The IP address belongs to Class A"    
     when 128..191
-        puts "The IP address belongs to Class B"
+      #Range 128-191
+      puts "The IP address belongs to Class B"
     when 192..223
-        puts "The IP Address belongs to Class C"
+      # Range 192-223
+      puts "The IP Address belongs to Class C"
     when 224..239
-        puts "The IP Address belongs to Class C" 
+      #Range 224-239
+      puts "The IP Address belongs to Class D" 
     when 240..255
-        puts "The IP Address belongs to Class D"
+      #Range 240-255
+      puts "The IP Address belongs to Class E"
     else 
       puts "Invalid IP address"
     end
