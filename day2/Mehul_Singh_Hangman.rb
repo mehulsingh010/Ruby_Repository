@@ -1,4 +1,6 @@
-def main
+$word
+
+def header
   puts "-------------  Welcome to Hangman Game ! ------------"
   puts " "
   puts "------------- CHOOSE THE LEVEL ------------ "
@@ -12,10 +14,10 @@ def main
 
   puts"Words Are Country Name"
   puts" "
-  puts "Enter the level you want to choose"
-  puts "(Enter the level in number)"
-  level_chosen = gets.chomp.to_i
+end
 
+def levels(level_chosen)
+  
   case level_chosen
   when 1
     puts "LEVEL 1 CHOSEN"
@@ -37,11 +39,25 @@ def main
     return
   end
 
-  word = words.sample
-  guess_word = Array.new(word.length, "_")
+  @word = words.sample
+  @guess_word = Array.new(@word.length, "_")
 
-  puts "Welcome to Hangman! The word has #{word.length} letters."
-  puts " ", guess_word.join(" ")
+  puts "Welcome to Hangman! The word has #{@word.length} letters."
+  puts " ", @guess_word.join(" ")
+
+
+end
+
+def main
+  # header function has menue for the game
+  header
+   
+  puts "Enter the level you want to choose"
+  puts "(Enter the level in number)"
+  level_chosen = gets.chomp.to_i
+
+  # levels function has the words for the game
+  levels(level_chosen)
 
   changes = 5
   while changes > 0
@@ -50,21 +66,21 @@ def main
     char = gets.chomp.downcase
 
     if char.match(/^[a-z]$/)
-      if word.include?(char)
-        for char_position in 0...word.length
-          if char == word[char_position]
-            guess_word[char_position] = char
+      if @word.include?(char)
+        for char_position in 0...@word.length
+          if char == @word[char_position]
+            @guess_word[char_position] = char
           end
         end
         puts "Guessed character is right: #{char}"
-        puts guess_word.join(" ")
+        puts @guess_word.join(" ")
       else
         changes -= 1
         puts "Wrong guess! You lost one chance."
       end
 
-      if guess_word.join("") == word
-        puts "Congratulations! You guessed the word: #{word}"
+      if @guess_word.join("") == @word
+        puts "Congratulations! You guessed the word: #{@word}"
         break
       end
     else
@@ -73,7 +89,7 @@ def main
   end
 
   if changes == 0
-    puts "Game Over! The word was: #{word}"
+    puts "Game Over! The word was: #{@word}"
   end
 end
 
